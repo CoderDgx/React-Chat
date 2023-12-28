@@ -1,29 +1,29 @@
 import type { ChatStore } from "./store";
 
-export const useDroppedSelector = (state: ChatStore) => {
+export const droppedSelector = (state: ChatStore) => {
   return state.dropped;
 };
 
-export const useActiveGroupUserSelector = (state: ChatStore) => {
+export const activeGroupUserSelector = (state: ChatStore) => {
   return state.activeGroupUser;
 };
 
-export const useActiveRoomSelector = (state: ChatStore) => {
+export const activeRoomSelector = (state: ChatStore) => {
   return state.activeRoom;
 };
 
-export const useGroupGatherSelector = (state: ChatStore) => {
+export const groupGatherSelector = (state: ChatStore) => {
   return state.groupGather;
 };
 
-export const useFriendGatherSelector = (state: ChatStore) => {
+export const friendGatherSelector = (state: ChatStore) => {
   return state.friendGather;
 };
 
-export const useUserGatherSelector = (state: ChatStore) => {
+export const userGatherSelector = (state: ChatStore) => {
   return state.userGather;
 };
 
-export const useUnReadGatherSelector = (state: ChatStore) => {
+export const unReadGatherSelector = (state: ChatStore) => {
   return state.unReadGather;
 };

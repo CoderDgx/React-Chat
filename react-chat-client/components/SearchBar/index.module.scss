@@ -1,0 +1,22 @@
+.search {
+  padding: 10px;
+}
+
+.search-select {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  .search-select-input {
+    flex: 1;
+  }
+}
+.search-dropdown {
+  cursor: pointer;
+  color: #fff;
+  margin-left: 10px;
+  font-size: 18px;
+  transition: 0.2s all linear;
+  &:hover {
+    color: skyblue;
+  }
+}
