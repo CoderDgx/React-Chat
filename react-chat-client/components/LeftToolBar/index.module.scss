@@ -28,72 +28,11 @@
   }
 }
 
-.tool-user {
-  width: 100%;
-  .tool-user-upload {
-    cursor: pointer;
-  }
-  .loading {
-    font-size: 35px;
-    font-weight: bold;
-    color: #fff;
-  }
-}
-.tool-user-info {
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  .tool-user-label {
-    width: 15%;
-  }
-  .tool-user-input {
-    flex: 1;
-  }
+.tool-user-upload {
+  cursor: pointer;
 }
 
-.tool-recommend {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  .recommend {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100px;
-    height: 100px;
-    margin: 15px 10px 0;
-    overflow: hidden;
-    cursor: pointer;
-    transition: 0.3s all linear;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    span {
-      position: absolute;
-      color: rgba(255, 255, 255, 0.85);
-      font-weight: 600;
-      transition: 0.3s all linear;
-      opacity: 0;
-    }
-    &:hover {
-      box-shadow: 1px 5px 10px gray;
-      span {
-        opacity: 1;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 788px) {
-  .tool-recommend {
-    font-size: 12px;
-    .recommend {
-      width: 80px;
-      height: 80px;
-    }
-  }
+.tool-backgroung-img {
+  object-fit: cover;
+  cursor: pointer;
 }

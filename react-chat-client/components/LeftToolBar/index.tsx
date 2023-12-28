@@ -1,21 +1,38 @@
 "use client";
-import { useAppStore, userSelector } from "../../store/app";
+import { backgroundSelector, useAppStore, userSelector } from "../../store/app";
 import styles from "./index.module.scss";
-import { Avatar, Button, Input, Modal, Space, Tooltip, Upload } from "antd";
+import {
+  Avatar,
+  Button,
+  Input,
+  Modal,
+  Space,
+  Tooltip,
+  Upload,
+  Image,
+  Row,
+  Col,
+  Form,
+} from "antd";
 import {
   BulbOutlined,
+  ExclamationCircleOutlined,
   GithubOutlined,
   PoweroffOutlined,
   SkinOutlined,
 } from "@ant-design/icons";
 import { useState } from "react";
+import BackgroundModal from "./BackgroundModal";
+import UserModal from "./UserModal";
 
 const LeftToolBar = () => {
   const user = useAppStore(userSelector);
+  const background = useAppStore(backgroundSelector);
   const [showUserModal, setShowUserModal] = useState(false);
   const [showBackgroundModal, setShowBackgroundModal] = useState(false);
   const [showUpload, setShowUpload] = useState(false);
   const [uploading, setUploading] = useState(false);
+
   return (
     <div className={styles["tool"]}>
       <div
@@ -40,55 +57,18 @@ const LeftToolBar = () => {
         </a>
         <PoweroffOutlined className={styles["icon"]} />
       </Space>
-      <Modal
-        title="编辑用户信息"
-        open={showUserModal}
+      <UserModal
+        showUserModal={showUserModal}
         onCancel={() => setShowUserModal(false)}
-        footer={[
-          <Button key="back" onClick={() => setShowUserModal(false)}>
-            取消
-          </Button>,
-          <Button key="submit" type="primary">
-            保存
-          </Button>,
-        ]}
-      >
-        <Space
-          className={styles["tool-user"]}
-          direction="vertical"
-          size="middle"
-        >
-          <Upload className={styles["tool-user-upload"]} showUploadList={false}>
-            <Avatar
-              src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
-              size={120}
-            />
-          </Upload>
-          <div className={styles["tool-user-info"]}>
-            <div className={styles["tool-user-label"]}>用户名：</div>
-            <Input
-              className={styles["tool-user-input"]}
-              placeholder="请输入用户名"
-            />
-          </div>
-          <div className={styles["tool-user-info"]}>
-            <div className={styles["tool-user-label"]}>密码：</div>
-            <Input.Password
-              className={styles["tool-user-input"]}
-              placeholder="请输入密码"
-            />
-          </div>
-        </Space>
-      </Modal>
-      <Modal
-        title="主题"
-        open={showBackgroundModal}
+        onFinished={(value) => console.log(value)}
+        user={user}
+      />
+      <BackgroundModal
+        showBackgroundModal={showBackgroundModal}
+        background={background}
         onCancel={() => setShowBackgroundModal(false)}
-        footer={null}
-      >
-        <div className={styles["tool-user-info"]}></div>
-        <div className={styles["tool-recommend"]}></div>
-      </Modal>
+        onFinished={(value) => console.log(value)}
+      />
     </div>
   );
 };

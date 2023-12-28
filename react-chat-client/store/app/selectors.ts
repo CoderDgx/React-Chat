@@ -9,5 +9,6 @@ export const userSelector = (state: AppStore) => {
 export const mobileSelector = (state: AppStore) => state.mobile;
 
 export const backgroundSelector = (state: AppStore) => {
-  return state.background || localStorage.getItem("background");
+  // return state.background || localStorage.getItem("background");
+  return state.background;
 };
