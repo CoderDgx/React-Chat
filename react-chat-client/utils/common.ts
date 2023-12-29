@@ -14,3 +14,9 @@ export function processReturn(res: AxiosResponse<ServerRes>) {
   }
   return data;
 }
+
+// 屏蔽词
+export function parseText(text: string) {
+  return text;
+}
+
